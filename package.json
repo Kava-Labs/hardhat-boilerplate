@@ -29,6 +29,7 @@
     "ethereum-waffle": "^3.1.1",
     "ethers": "^5.0.0",
     "hardhat": "^2.3.0",
-    "husky": "^4.2.5"
+    "husky": "^4.2.5",
+    "dotenv": "^10.0.0"
   }
 }

@@ -1,9 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
-
-// The next line is part of the sample project, you don't need it in your
-// project. It imports a Hardhat task definition, that can be used for
-// testing the frontend.
 require("./tasks/faucet");
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, './.env') })
 
 // If you are using MetaMask, be sure to change the chainId to 1337
 module.exports = {
@@ -11,6 +9,12 @@ module.exports = {
   networks: {
     hardhat: {
       chainId: 31337
-    }
+    },
+    kava_evm: {
+      url: "https://evm.evm-alpha.kava.io",
+      accounts: [`${process.env.KAVA_EVM_PRIVATE_KEY}`],
+      chainId: 2221,
+      tags: ["kava"],
+  },
   }
 };
